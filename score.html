@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>لعبة الأرقام</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="direction: rtl;">
+        <div class="container-fluid">
+            <img style="width: 100px" class="logo" src="image.png"></img>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item" style="background-color: #6610f2; border-radius: 30%;">
+                        <a class="nav-link active" aria-current="page" href="home.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الاحصائيات</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الفريق المنفذ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">إجراء</a></li>
+                            <li><a class="dropdown-item" href="#">إجراء آخر</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">شيء آخر هنا</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="bac">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>الإحصائيات</title>
+            <style>
+                table {
+                    width: 50%;
+                    margin: auto;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>إحصائيات اللاعبين</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اللاعب</th>
+                        <th>الرصيد</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardTableBody">
+                    <!-- سيتم إضافة البيانات هنا من خلال الجافاسكريبت -->
+                </tbody>
+            </table>
+        
+            <script>
+                // جلب البيانات من localStorage وإضافتها إلى الجدول
+                document.addEventListener('DOMContentLoaded', function() {
+                    var leaderboardData = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        
+                    var tableBody = document.getElementById('leaderboardTableBody');
+                    leaderboardData.forEach(function(entry) {
+                        var row = document.createElement('tr');
+                        row.innerHTML = '<td>' + entry.playerName + '</td><td>' + entry.score + '</td>';
+                        tableBody.appendChild(row);
+                    });
+                });
+            </script>
+        </body>
+        </html>
+        
+    </main>
+    <script>
+        // جلب البيانات من localStorage وإضافتها إلى الجدول
+        document.addEventListener('DOMContentLoaded', function() {
+            var leaderboardData = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+            var tableBody = document.getElementById('leaderboardTableBody');
+            leaderboardData.forEach(function(entry) {
+                var row = document.createElement('tr');
+                row.innerHTML = '<td>' + entry.playerName + '</td><td>' + entry.score + '</td>';
+                tableBody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>

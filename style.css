@@ -1,0 +1,27 @@
+#bac {
+    background-color: #007bff; /* لون السماوي */
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* لجعل العنصر يمتد على طول ارتفاع النافذة */
+}
+
+.orange-box {
+    
+    justify-content: center;    
+    background-color: orange;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.nav-item {
+
+    margin-right: 50px; /* تعديل المسافة بين العناصر */
+}
+
